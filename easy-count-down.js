@@ -1,19 +1,19 @@
 (function () {
     'use strict';
 
-    var easyCounter = angular.module('myApp', []);
+    var easyCountDown = angular.module('myApp', []);
 
-    easyCounter.factory('scriptCache', ['$cacheFactory', function ($cacheFactory) {
-        console.log('easyCounter.factory');
+    easyCountDown.factory('scriptCache', ['$cacheFactory', function ($cacheFactory) {
+        console.log('easyCountDown.factory');
     }]);
-    easyCounter.controller('CounterController', ['$scope', '$interval', function($scope, $interval){
-        CounterController.$inject = ['$scope', '$interval'];
+    easyCountDown.controller('CountDownController', ['$scope', '$interval', function($scope, $interval){
+        CountDownController.$inject = ['$scope', '$interval'];
 
-        function CounterController($scope, $interval) {
+        function CountDownController($scope, $interval) {
             this.$scope = $scope;
             this.$interval = $interval;
         }
-        CounterController.prototype.init = function () {
+        CountDownController.prototype.init = function () {
             var endDate = new Date($scope.endDate);
             if (!(endDate instanceof Date)) {
                 return;
@@ -42,19 +42,19 @@
                 this.destroyInterval();
             });
         };
-        CounterController.prototype.range = function (n) {
+        CountDownController.prototype.range = function (n) {
             return new Array(n);
         };
-        CounterController.prototype.destroyInterval = function () {
+        CountDownController.prototype.destroyInterval = function () {
             if (angular.isDefined(this.intervalReff)) {
                 $interval.cancel(this.intervalReff);
                 this.intervalReff = undefined;
             }
         };
-        CounterController.controllerId = "counterController";
-        return CounterController;
+        CountDownController.controllerId = "CountDownController";
+        return CountDownController;
     }]);
-    easyCounter.directive('easyCounterDirective', ['$interval', function($interval) {
+    easyCountDown.directive('easyCountDownDirective', ['$interval', function($interval) {
         return {
             restrict: 'A',
             template:   '<div ng-controller="ctrl" >' +
@@ -68,7 +68,7 @@
                                  '</div>' +
                             '</div>' +
                         '</div>',
-            controller: 'CounterController',
+            controller: 'CountDownController',
             controllerAs: 'ctrl',
             scope : {
                 endDate: '@'
