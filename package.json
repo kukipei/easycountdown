@@ -1,0 +1,30 @@
+{
+  "name": "easycountdown",
+  "version": "1.0.2",
+  "description": "Easy and pretty countdouwn",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilijastojkovic/easycountdown.git"
+  },
+  "keywords": [
+    "easy",
+    "countdown"
+  ],
+  "author": "IlijaStojkovic <ilijastojkovic@yahoo.com> (http://ezubar.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ilijastojkovic/easycountdown/issues"
+  },
+  "homepage": "https://github.com/ilijastojkovic/easycountdown#readme",
+  "engines": {
+    "node": ">=3.10.6"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}
