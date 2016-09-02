@@ -1,6 +1,6 @@
 {
   "name": "easycountdown",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Easy and pretty countdouwn",
   "main": "index.js",
   "scripts": {
