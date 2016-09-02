@@ -1,4 +1,4 @@
-Number Formatter
+Easy Countdown
 =========
 
 A small library that adds commas to numbers
