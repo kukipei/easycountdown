@@ -22,7 +22,7 @@
           }
 
           $scope.intervalReff = $interval(function () {
-              var hours, minutes,
+              var hours, minutes, sec,
                   startDate = new Date(),
                   diff = (Number(endDate) - Number(startDate)) / 1000, days = Math.floor(diff / 86400)
               ;
@@ -32,12 +32,17 @@
                   hours = Math.floor(diff / 3600) % 24;
                   diff -= hours * 3600;
                   minutes = Math.floor(diff / 60) % 60;
+                  diff -= minutes * 60;
+                  sec = Math.floor(diff / 60) % 60;
               } else {
-                  days = hours = minutes = 0;
+                  days = hours = minutes = sec =0;
                   destroyInterval();
               }
 
               $scope.days = days;
+              $scope.hours = hours;
+              $scope.minutes = minutes;
+              $scope.sec = sec;
               $scope.counter = days.toString() + ":" + ('0' + hours.toString()).substr(-2) + ":" + ('0' + minutes.toString()).substr(-2);
           }, 1000);
 
@@ -58,7 +63,20 @@
             restrict: 'A',
             template:   '<div ng-controller="CountDownController as ctrl" >' +
                             '<div class="outer" id="stopWatch">' +
-                                '<div class="counter">{{counter}}</div>' +
+                                '<div class="counter">' +
+                                    '<div class="showCount">' +
+                                        '<div>Days</div><div class="countVal">{{days}}</div>' +
+                                    '</div>' +
+                                    '<div class="showCount">' +
+                                        '<div>Hours</div><div class="countVal">{{hours}}</div>' +
+                                    '</div>' +
+                                    '<div class="showCount">' +
+                                        '<div>Minutes</div><div class="countVal">{{minutes}}</div>' +
+                                    '</div>' +
+                                    '<div class="showCount">' +
+                                        '<div>Sec</div><div class="countVal">{{sec}}</div>' +
+                                    '</div>' +
+                                '</div>' +
                                 '<div class="points" style="-moz-transform: rotate({{90 + $index * 6}}deg); -ms-transform: rotate({{90 + $index * 6}}deg); -webkit-transform: rotate({{90 + $index * 6}}deg); transform: rotate({{90 + $index * 6}}deg);" ng-repeat="a in ctrl.range(30) track by $index">' +
                                     '<div class="circle floatRight" ng-class="{\'activePoint\': days > ($index + 30), \'inactivePoint\': days <= ($index + 30)}"></div>' +
                                     '<div class="squere floatRight" ng-class="{\'activePoint\': days > ($index + 30), \'inactivePoint\': days <= ($index + 30)}"></div>' +
