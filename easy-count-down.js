@@ -33,7 +33,7 @@
                   diff -= hours * 3600;
                   minutes = Math.floor(diff / 60) % 60;
                   diff -= minutes * 60;
-                  sec = Math.floor(diff / 60) % 60;
+                  sec = Math.floor(diff);
               } else {
                   days = hours = minutes = sec =0;
                   destroyInterval();
