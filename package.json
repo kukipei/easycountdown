@@ -2,7 +2,6 @@
   "name": "easycountdown",
   "version": "1.0.3",
   "description": "Easy and pretty countdouwn",
-  "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec"
   },
@@ -12,7 +11,9 @@
   },
   "keywords": [
     "easy",
-    "countdown"
+    "countdown",
+    "angular",
+    "counter demo"
   ],
   "author": "IlijaStojkovic <ilijastojkovic@yahoo.com> (http://ezubar.com)",
   "license": "MIT",
@@ -24,6 +25,7 @@
     "node": ">=3.10.6"
   },
   "devDependencies": {
+    "angular": "~1.4",
     "chai": "^3.5.0",
     "mocha": "^3.0.2"
   }

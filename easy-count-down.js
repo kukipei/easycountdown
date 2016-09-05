@@ -1,11 +1,8 @@
 (function () {
     'use strict';
 
-    var easyCountDown = angular.module('myApp', []);
+    var easyCountDown = angular.module('easyCountDown', []);
 
-    easyCountDown.factory('scriptCache', ['$cacheFactory', function ($cacheFactory) {
-        console.log('easyCountDown.factory');
-    }]);
     easyCountDown.controller('CountDownController', ['$scope', '$interval', function($scope, $interval){
         CountDownController.$inject = ['$scope', '$interval'];
 
