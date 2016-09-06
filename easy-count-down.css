@@ -1,10 +1,6 @@
 /* #########################################################
 ### COUNTER
 ######################################################### */
-#stopWatch .counter {
-    color: white;
-    line-height: 120px;
-}
 #stopWatch.outer {
     border-radius: 50%;
     position: relative;
@@ -88,6 +84,16 @@
     /*Fx 3.6-15*/
     background: linear-gradient(to right, rgba(104, 232, 255, 0), rgba(104, 232, 255, 0.15));
     /*Standard*/
+}
+
+#stopWatch .showCount {
+    padding: 0 5px;
+    display: inline-block;
+    color: #68e8ff;
+}
+
+#stopWatch .countVal{
+    color: white;
 }
 @media all and (max-width: 765px) {
     .main_container .side_navigation::after {

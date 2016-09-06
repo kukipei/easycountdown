@@ -1,15 +1,16 @@
 {
   "name": "easycounterdown",
-  "version": "1.0.3",
+  "version": "1.0.9",
   "description": "Easy and pretty countdouwn",
-  "main": "index.js",
   "authors": [
     "IlijaStojkovic <ilijastojkovic@yahoo.com> (http://ezubar.com)"
   ],
   "license": "MIT",
   "keywords": [
     "easy",
-    "countdown"
+    "countdown",
+    "angular",
+    "counter demo"
   ],
   "homepage": "https://github.com/ilijastojkovic/easycountdown",
   "ignore": [
@@ -18,5 +19,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "angular": "~1.4"
+  }
 }
